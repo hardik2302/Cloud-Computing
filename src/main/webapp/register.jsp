@@ -42,6 +42,8 @@
 	   </table>
 	   <input type="submit" value="register" />
   </form>
+  <h1>Already have an account?</h1>
+  <a href="login.jsp">Login</a>
  </div>
 </body>
 </html>

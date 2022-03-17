@@ -22,6 +22,8 @@
 		   </table>
 		   <input type="submit" value="login" />
   </form>
+  <h1>Don't have an account?</h1>
+  <a href="register.jsp">Login</a>
  </div>
 </body>
 </html>
