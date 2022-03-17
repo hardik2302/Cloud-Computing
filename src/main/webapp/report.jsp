@@ -24,6 +24,8 @@
 	<%@page import="java.sql.ResultSet"%>
 	<%@page import="java.sql.Statement"%>
 	<%@page import="java.sql.Connection"%>
+	<%@ page import="java.sql.*" %> 
+	<%@ page import="java.io.*" %> 
 <%
 	String mis = request.getParameter("mis");
 	String driver = "com.mysql.jdbc.Driver";
@@ -41,7 +43,7 @@
 	ResultSet resultSet = null;
 %>
 	
-
+<h1>Current Data from database</h1>
 <table border="1">
 <tr>
 <td>MIS</td>
@@ -51,7 +53,7 @@
 <td>Contact</td>
 <td>Job Role</td>
 <td>Yearly Bonus</td>	
-
+<td>update</td>
 </tr>
 <%
 try{
@@ -69,7 +71,9 @@ try{
 	<td><%=resultSet.getString("contact") %></td>
 	<td><%=resultSet.getString("jobrole") %></td>
 	<td><%=resultSet.getString("bonus") %></td>
+	<td><a href="update.jsp?mis=<%=resultSet.getString("mis")%>">update</a></td>
 	</tr>
+	
 	<%
 	}
 	connection.close();
@@ -78,5 +82,6 @@ e.printStackTrace();
 }
 %>
 </table>
+
 </body>
 </html>
